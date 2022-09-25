@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Nature-To-Earn
+#### "Rewarding people for connecting with nature"
+## Overview
+Nature-To-Earn (N2E) is a purpose-driven token that rewards people for getting out into nature. We believe that connecting with nature pushes people to take better care of nature. By having N2E validators facilitate nature events (e.g. hikes, mushroom forays, beach cleanups, etc), we can verify people's participation in nature events & reward them accordingly.
+## Solution
+To materialize our idea, we created an Incentive and reward-based platform where people attend events to learn about nature and earn while doing that.
+## MVP for EthOnline Hackathon
+### Roles
+ - Validator/Host/Organizer: Event organizers or hosts.
+ - Users: Can vote for an event proposal to be approved and can be Event participants or attendees.
+### Interaction
+ - The validator/organizer registers an event on the platform as the host of the event.
+ - The members can vote for event proposals to be approved/accepted by the platform before users can signup for the event.
+- The members can enroll for events as attendees/participants, and have to upload a proof of attendance after an event they enrolled for has ended (currently a day after the event) or they wont receive their incentives.
 
-## Getting Started
+## Architecture
+### Web3.Storage and IPFS/Filecoin
+We store certain data on IPFS via web3.storage such as:
+ - Event Information: This includes the Event name, location, about, start time, and end time.
+ - User Enrollment information: This includes User's name, age picture, and country.
+ - Attendance proof: This is just an image that serves as proof of attendance. 
+ These are uploaded to IPFS and their CIDs are stored on-chain via our smart contract.
 
-First, run the development server:
+### Polygon
+- The Nature-To-Earn contract exits on Polygon Mumbai Testnet which gives us the ability to run our application in a real-world environment.
+- As stated above, links to events, user enrollment, and proof of attendance are saved on-chain via the contract as a point of reference.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### Worldcoin
+We utilize worldcoin's proof of personhood on our platform by requesting user verification before event enrollment can be completed. This allows us to mitigate cases of bots interacting with the platform and multiple users trying to enroll more than once.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### EPNS (Ethereum Push Notification Service)
+We utilize EPNS to send notifications to the attendees as a reminder of the event for which they've signed up.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Contract 
+The Nature-To-Earn contract is an ERC721 contract which handles features such as registering an event, voting for an event to be approved/accepted, signing up for an event, verifying users during signup, accepting proof of attendance, and minting NFTs as rewards for the attendees of an event.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### DApp
+The frontend is built using ethers.js, wagmi, and Next.js.
+The backend is built with Solidity and Hardhat.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Future Improvements
+### EPNS
+We could implement a feature where users receive notifications few hours or a day to the event's scheduled start time. 
 
-## Learn More
+### UI/UX
+The general user interface and experience would need more attention to make it better than what it is now and make interaction much simple and smoother for users.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

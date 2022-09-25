@@ -237,7 +237,7 @@ function RegisterInEvent() {
           </FormControl>
           <Button m="20px" type="submit">
             {/* <Link href="/"> */}
-            <a>Submit</a>
+            <a href="/">Submit</a>
             {/* </Link> */}
           </Button>
         </form>

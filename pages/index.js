@@ -31,47 +31,10 @@ const Dao = dynamic(() => import("./Dao"), { ssr: false });
 const BookEvent = dynamic(() => import("./BookEvent"), { ssr: false });
 const Host = dynamic(() => import("./Host"), { ssr: false });
 const Proof = dynamic(() => import("./Proof"), { ssr: false });
+const NFT = dynamic(() => import("./NFT"), { ssr: false });
 
 function App() {
   const { address, isConnected } = useAccount();
-  // const [arr, setArr] = useState([]);
-
-  // const getEvents = () => {
-  //   const {
-  //     data: totalEvents,
-  //     isError,
-  //     isLoading,
-  //   } = useContractRead({
-  //     ...contract_config,
-  //     functionName: "next_event_proposal",
-  //   });
-
-  //   for (let i = 1; i < totalEvents; i++) {
-  //     const { data: event } = useContractRead({
-  //       ...contract_config,
-  //       functionName: "event_proposals",
-  //       args: [i],
-  //     });
-  //     console.log(event);
-  //     arr.push(event);
-  //   }
-  //   // setEvents(arr);
-  //   console.log(arr);
-  //   setArr(arr);
-  //   // return arr;
-
-  //   // return (
-  //   //   <ul>
-  //   //     {arr.map((event, index) => (
-  //   //       <li>ehiokoj</li>
-  //   //     ))}
-  //   //     {/* bcudefufyu */}
-  //   //   </ul>
-  //   // );
-  // };
-  // useEffect(() => {
-  //   getEvents();
-  // }, []);
 
   return (
     <Box
@@ -85,7 +48,7 @@ function App() {
       <Flex
         justifyContent="space-between"
         marginBottom="10"
-        border="2px"
+        borderBottom="3px"
         borderColor="black"
       >
         <Box m={(10, 15)}>Logo</Box>
@@ -104,6 +67,7 @@ function App() {
           <Tab fontWeight="bold">DAO</Tab>
           <Tab fontWeight="bold">Host</Tab>
           <Tab fontWeight="bold">Submit proof</Tab>
+          <Tab fontWeight="bold">Mint NFT</Tab>
           {/* <Tab fontWeight="bold</Tab> */}
         </TabList>
         <TabPanels>
@@ -131,6 +95,9 @@ function App() {
           </TabPanel>
           <TabPanel>
             <Proof user={address}></Proof>
+          </TabPanel>
+          <TabPanel>
+            <NFT user={address}></NFT>
           </TabPanel>
         </TabPanels>
       </Tabs>

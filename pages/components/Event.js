@@ -57,25 +57,9 @@ function Event(props) {
   });
 
   const btn = () => {
-    // const { data: res1 } = useContractRead({
-    //   ...contract_config,
-    //   functionName: "isEventNotOver",
-    //   args: [props.eventId],
-    // });
-
-    //  const {data:event} useContractRead({
-    //     ...contract_config,
-    //     functionName: "event_proposals",
-    //     args: [props.eventId],
-    //   });
-
-    // const res2 = props.event.currentAudienceCount < props.event.maxAudience;
+   
     const res2 = event.currentAudienceCount < event.maxAudience;
-    // const { data: res3 } = useContractRead({
-    //   ...contract_config,
-    //   functionName: "participant_info",
-    //   args: [props.eventId, props.user],
-    // });
+   
 
     if (!props.user) {
       return <Button disabled>Not connected</Button>;

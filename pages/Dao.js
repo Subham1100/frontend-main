@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 import {
-  Container,
-  Text,
-  Flex,
   Box,
   Heading,
   Spacer,
@@ -67,7 +64,7 @@ function Dao(props) {
   return (
     // <Box>
 
-    <Box width="60%" >
+    <Box width="60%">
       <UnorderedList>{showEvents()}</UnorderedList>
     </Box>
   );

@@ -125,10 +125,10 @@ function DaoEvent(props) {
   //   const code = btn();
   //   setBtnCode(code);
   // }, []);
-  const xyz = (e) => {
-    e.preventDefault();
-    console.log(event.uri);
-  };
+  // const xyz = (e) => {
+  //   e.preventDefault();
+  //   console.log(event.uri);
+  // };
 
   return (
     <>
@@ -145,7 +145,7 @@ function DaoEvent(props) {
               <Heading size="md">{event.name}</Heading>
             </Box>
             <a href={event.uri}>
-              <Button onClick={xyz}>Details</Button>
+              <Button>Details</Button>
             </a>
 
             <Flex>

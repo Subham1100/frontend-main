@@ -57,9 +57,7 @@ function Event(props) {
   });
 
   const btn = () => {
-   
     const res2 = event.currentAudienceCount < event.maxAudience;
-   
 
     if (!props.user) {
       return <Button disabled>Not connected</Button>;
@@ -97,7 +95,9 @@ function Event(props) {
             <Box>
               <Heading size="md">{event.id + ". " + event.name}</Heading>
             </Box>
-            <Button>Details</Button>
+            <Button>
+              <a href={event.uri}>Details</a>
+            </Button>
             {btn()}
           </Flex>
           {/* {props.event.name} */}

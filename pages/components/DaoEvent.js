@@ -140,7 +140,9 @@ function DaoEvent(props) {
             <Box>
               <Heading size="md">{event.name}</Heading>
             </Box>
-            <Button>Details</Button>
+            <Button>
+              <a href={event.uri}>Details</a>{" "}
+            </Button>
             <Flex>
               <Flex
                 justifyContent="center"

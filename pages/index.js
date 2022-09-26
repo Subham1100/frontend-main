@@ -21,6 +21,8 @@ import {
   usePrepareContractWrite,
   useContractWrite,
 } from "wagmi";
+import Image from "next/image";
+import logo from "./logo/logo.png";
 import contract_config from "./contractData/contractConfig";
 // import styles from "./css/index.module.css";
 // import Register from "./components/Register";
@@ -51,7 +53,9 @@ function App() {
         borderBottom="3px"
         borderColor="black"
       >
-        <Box m={(10, 15)}>Logo</Box>
+        <Box margin="10px 10px">
+          <Image src={logo} width="175px" height="175px" />
+        </Box>
         {/* <Spacer /> */}
         <Heading textAlign="center" fontSize="6xl" m={(20, 10)}>
           Nature2earn

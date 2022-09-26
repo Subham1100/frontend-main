@@ -168,6 +168,7 @@ function RegisterInEvent() {
     setFormState({ ...formState, cid: _cid });
     console.log(formState);
     console.log(_cid);
+    // console.log(worldCoinData);
     write?.();
     // console.log(worldCoinData);
 
@@ -184,7 +185,6 @@ function RegisterInEvent() {
     // }else{
 
     // }
-    
 
     /*
 
@@ -237,7 +237,7 @@ function RegisterInEvent() {
           </FormControl>
           <Button m="20px" type="submit">
             {/* <Link href="/"> */}
-            <a href="/">Submit</a>
+            <a>Submit</a>
             {/* </Link> */}
           </Button>
         </form>

@@ -16,7 +16,7 @@ function DaoEvent(props) {
     functionName: "event_proposals",
     args: [props.eventId],
   });
-  // console.log(event);
+  console.log(event);
   const { data: num } = useContractRead({
     ...contract_config,
     functionName: "DAO_membership_status_mapping",
@@ -125,6 +125,10 @@ function DaoEvent(props) {
   //   const code = btn();
   //   setBtnCode(code);
   // }, []);
+  const xyz = (e) => {
+    e.preventDefault();
+    console.log(event.uri);
+  };
 
   return (
     <>
@@ -140,9 +144,10 @@ function DaoEvent(props) {
             <Box>
               <Heading size="md">{event.name}</Heading>
             </Box>
-            <Button>
-              <a href={event.uri}>Details</a>{" "}
-            </Button>
+            <a href={event.uri}>
+              <Button onClick={xyz}>Details</Button>
+            </a>
+
             <Flex>
               <Flex
                 justifyContent="center"

@@ -5,9 +5,7 @@ import {
   Heading,
   Spacer,
   Button,
-
   Input,
-
   FormControl,
   FormLabel,
   Textarea,
@@ -131,7 +129,7 @@ const BookEvent = (props) => {
     const file = await makeFile();
 
     const _cid = await client.put(file);
-    const cidLink = `https://${cid}.ipfs.dweb.link/user_info.json`;
+    const cidLink = `https://${_cid}.ipfs.dweb.link/user_info.json`;
     setCid(cidLink);
 
     return cidLink;
@@ -140,7 +138,8 @@ const BookEvent = (props) => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    const cidLink = await storeData(e.target);
+    const cidLink = await storeData();
+    // setCid(cidLink);
     console.log(cidLink);
     // console.log(write);
     console.log(formState);

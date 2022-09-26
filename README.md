@@ -48,3 +48,6 @@ The general user interface and experience would need more attention to make it b
 ### DAO Event Voting
 The current state of the DAO allows any member to vote for/against an event proposal once with a wallet, we could make this more unique by adding worldcoin verification to the voting process, since a user can have multiple wallets but a single worldcoin identity.
 
+### Incentives
+Currently only NFTs are awarded as incentives which are tokens that can't be easily liquidated, we would be looking to implement ERC20 Tokens as incentives alongside NFTs to give users multiple options to claim from.
+

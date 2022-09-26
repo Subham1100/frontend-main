@@ -46,5 +46,5 @@ We could implement a feature where users receive notifications few hours or a da
 The general user interface and experience would need more attention to make it better than what it is now and make interaction much simple and smoother for users.
 
 ### DAO Event Voting
-The current state of the DAO allows any member to vote for/against an event proposal once with a wallet, we could make this more unique by adding a worldcoin verification the voting process, since a user can have multiple wallets but a single worldcoin identity.
+The current state of the DAO allows any member to vote for/against an event proposal once with a wallet, we could make this more unique by adding worldcoin verification to the voting process, since a user can have multiple wallets but a single worldcoin identity.
 

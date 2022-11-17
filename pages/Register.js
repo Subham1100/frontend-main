@@ -84,7 +84,7 @@ const Register = (user) => {
     });
 
     let arr = [];
-    for (let i = totalEvents- 1; i >= 1; i--) {
+    for (let i = totalEvents - 1; i >= 1; i--) {
       arr.push(<Event eventId={i} user={user.user} key={i}></Event>);
     }
     return arr;
@@ -122,7 +122,7 @@ const Register = (user) => {
           + new event
         </Button>
       </Link>
-      <UnorderedList width="50%">{showEvents()}</UnorderedList>
+      <UnorderedList width="65%">{showEvents()}</UnorderedList>
 
       {/* <Button disabled={!write} onClick={() => write?.()}>
           Write

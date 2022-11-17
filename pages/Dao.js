@@ -64,8 +64,10 @@ function Dao(props) {
   return (
     // <Box>
 
-    <Box width="60%">
-      <UnorderedList>{showEvents()}</UnorderedList>
+    <Box width="90%">
+      <UnorderedList display="flex" flexDir="column" justifyContent="left">
+        {showEvents()}
+      </UnorderedList>
     </Box>
   );
 }

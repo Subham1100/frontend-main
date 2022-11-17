@@ -54,7 +54,6 @@ const Proof = (props) => {
     return imageUri;
   };
 
-
   const { config } = usePrepareContractWrite({
     ...contract_config,
     functionName: "submitProof",
@@ -69,7 +68,7 @@ const Proof = (props) => {
     }
   };
   const submitHandler = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const _cid = await getImageLink();
     setFormState({ ...formState, cid: _cid });
     console.log(_cid);
@@ -77,29 +76,38 @@ const Proof = (props) => {
   };
   return (
     <Box width="70%">
- <form onSubmit={submitHandler} >
-      <FormControl>
-        <FormLabel>Event id</FormLabel>
-        <Input type="number" name="eventId" onChange={formChangeHandler} />
-      </FormControl>
-      <FormControl>
-        <FormLabel>Proof image</FormLabel>
-        <Input type="file" name="image" onChange={formChangeHandler} />
-      </FormControl>
-    {
-        props.user ? (
-          <Button type="submit" marginTop="1rem">
+      <form onSubmit={submitHandler}>
+        <FormControl>
+          <FormLabel fontSize="20px">Event id</FormLabel>
+          <Input
+            boxShadow="lg"
+            type="number"
+            name="eventId"
+            onChange={formChangeHandler}
+          />
+        </FormControl>
+        <FormControl>
+          <FormLabel my="20px" fontSize="20px">
+            Proof image
+          </FormLabel>
+          <Input
+            boxShadow="lg"
+            type="file"
+            name="image"
+            onChange={formChangeHandler}
+          />
+        </FormControl>
+        {props.user ? (
+          <Button type="submit" marginTop="3rem">
             Submit
           </Button>
         ) : (
-          <Button type="submit" disabled={true} marginTop="1rem">
+          <Button type="submit" disabled={true} marginTop="3rem">
             Not connected
           </Button>
-        )
-    }  
-    </form>
+        )}
+      </form>
     </Box>
-   
   );
 };
 export default Proof;

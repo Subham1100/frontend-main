@@ -55,8 +55,9 @@ const NFT = (props) => {
     <Box width="70%">
       <form>
         <FormControl>
-          <FormLabel>Event id</FormLabel>
+          <FormLabel fontSize="20px">Event id</FormLabel>
           <Input
+            boxShadow="lg"
             placeholder="Caller must be eligible to get NFT of this eventId"
             type="number"
             name="eventId"
@@ -65,11 +66,11 @@ const NFT = (props) => {
         </FormControl>
 
         {props.user ? (
-          <Button type="submit" marginTop="1rem" onClick={() => write?.()}>
+          <Button type="submit" marginTop="2rem" onClick={() => write?.()}>
             Submit
           </Button>
         ) : (
-          <Button type="submit" disabled={true} marginTop="1rem">
+          <Button type="submit" disabled={true} marginTop="2rem">
             Not connected
           </Button>
         )}

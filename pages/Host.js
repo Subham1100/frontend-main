@@ -66,10 +66,11 @@ const Host = (props) => {
     <Box width="70%">
       <form onSubmit={submitHandler} marginTop="2rem">
         <FormControl>
-          <FormLabel>
+          <FormLabel fontSize="20px">
             Event id(Caller must be the host of this eventId)
           </FormLabel>
           <Input
+            boxShadow="lg"
             placeholder="Event must be over"
             type="number"
             name="eventId"
@@ -77,20 +78,28 @@ const Host = (props) => {
           />
         </FormControl>
         <FormControl>
-          <FormLabel>
+          <FormLabel pt="40px" fontSize="20px">
             Enter addresses which attended the event(separated by comma)
           </FormLabel>
-          <Input type="text" name="addresses" onChange={formChangeHandler} />
+          <Input
+            boxShadow="lg"
+            type="text"
+            name="addresses"
+            onChange={formChangeHandler}
+          />
         </FormControl>
 
-
-
         {props.user ? (
-          <Button m="20px" type="submit" onClick={() => write?.()}>
+          <Button
+            marginTop="3rem"
+            m="20px"
+            type="submit"
+            onClick={() => write?.()}
+          >
             Submit
           </Button>
         ) : (
-          <Button type="submit" disabled={true} marginTop="1rem">
+          <Button type="submit" disabled={true} marginTop="3rem">
             Not connected
           </Button>
         )}

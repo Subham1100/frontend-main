@@ -1,4 +1,5 @@
 import "@rainbow-me/rainbowkit/styles.css";
+
 import {
   getDefaultWallets,
   RainbowKitProvider,
@@ -34,9 +35,8 @@ const wagmiClient = createClient({
 });
 
 function MyApp({ Component, pageProps }) {
-
   return (
- <ChakraProvider  >
+    <ChakraProvider>
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider
           coolMode
@@ -52,7 +52,6 @@ function MyApp({ Component, pageProps }) {
         </RainbowKitProvider>
       </WagmiConfig>
     </ChakraProvider>
-   
   );
 }
 
